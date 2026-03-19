@@ -20,40 +20,58 @@ body {
 
 /* HERO */
 .hero {
-  background: #38393d;
-  color: #e8e4dc;
-  padding: 50px 0 60px;
-  border-radius: 5px;
-}
-.hero em{
-    color: rgb(104, 104, 227);
-    font-style: italic;
+    /* changes the opacity of hero img */
+    background-image: linear-gradient(rgba(0,53,148,0.75), rgba(0,53,148,0.75)),
+                      url("media/PittBackground.png");
+    background-size: 885px; 
+    background-repeat: repeat;
+    background-position: left;
+    color: #FFFFFF;
+    padding: 60px 60px 70px;
+    animation: textFadeIn 0.8s ease-in forwards;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1px;
 }
 
+@keyframes textFadeIn {
+    to { opacity: 20; transform: translateY(0); }
+}
 .hero h1 {
-    font-size: 2.2em; line-height: 1.2; margin-bottom: 14px; 
+    opacity: 0;
+    font-size: 3.8em;
+    line-height: 1.2; 
+    margin-bottom: 25px; 
+    animation: textFadeIn 0.8s ease-in forwards;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.268);
 }
 
-
-.hero p  {
-    color: #bbb; margin-bottom: 24px; font-size: 0.92em; 
+.hero em {
+    color: #FFB81C;
+    font-family: "merriweather", sans-serif;
+    font-weight: 700;
+    font-style: normal;  
+    text-shadow: 0 1px 8px rgba(0,0,0,0.268);
 }
-.hero a  {
-  display: inline-block;
-  background: #efd636ee; 
-  color: #2a332a;
-  padding: 6px 14px; text-decoration: none;
-  font-size: 0.82em;
-  border-radius: 2px;  
+.hero hr{
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    opacity: 0;
+    animation: textFadeIn 1.5s ease-in forwards;
+    width: 525px;
+    border-top: 1px solid white;
 }
-.hero a:hover  {
-    display: inline-block;
-    padding: 6px 14px; text-decoration: none;
-    font-size: 0.82em;
-    transform: none; filter: brightness(1.1);
-    border-radius: 2px;  
+.hero p {
+    opacity: 0;
+    color: #C8C9C7; 
+    font-size: .95em; 
+    display: block;
+    animation: textFadeIn 1.5s ease-in forwards;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.268);
 }
-
 
 .section {
     padding: 40px 0;
@@ -62,8 +80,8 @@ body {
     padding-left: 36px;
     padding-right: 36px; 
 }
-.alt    { 
-    background: #f5f2eb;
+.alt { 
+    background: #DBEEFF;
     padding: 40px 0; 
 }
 
@@ -75,9 +93,12 @@ hr {
      }
 
 .label { 
-    font-size: 0.8em; color: #888;
+    font-size: 1.5em; color: #00205B;
     border-bottom: 1px solid #ddd;
-    padding-bottom: 6px;
+    font-family: "alternate-gothic-atf", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    padding-bottom: 2px;
     margin-bottom: 14px; 
     }
 
@@ -86,7 +107,7 @@ h2 {
     margin-bottom: 8px;
     }
 
-p  { 
+p { 
     color: #555;
     margin-bottom: 14px;
     font-size: 0.92em;
@@ -95,28 +116,29 @@ p  {
 /* CARDS */
 .cards {
     margin-top: 16px; 
-    }
-.card { 
-    border: 1px solid #ccc;
-    border-radius: 1px;
-    padding: 16px 18px;
-    margin-bottom: 14px;
-    background: #fff; 
-    box-shadow: 0 1px 8px rgba(0,0,0,0.15);
 }
 
-.card:hover{
+.card {
+    border: 2px solid #0000006a;
+    border-radius: 3px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+    background: #fff;
     cursor: pointer;
-    transform: scale(1.05); outline: white solid 2.5px; 
+    transition: box-shadow 0.3s ease-in-out; /* only here */
 }
+    
+.card:hover {
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.14);
+ }
 .card h3 { 
     font-size: 1em;
     margin-bottom: 6px;
     color: #111;
     }
-.card p  { 
+.card p { 
     font-size: 0.88em;
-     color: #444;
+    color: #444;
     margin-bottom: 6px;
  }
 
@@ -131,7 +153,8 @@ select, button {
   border: 1px solid #888;
 }
 button { 
-    background: #111;
+    background: #00205B;
+    border-radius: .2px;
     color: #fff;
     cursor: pointer;
     border: none;
@@ -143,9 +166,11 @@ button:hover {
 
 .dept-note {
   display: none;
-  font-style: italic; font-size: 0.85em; color: #555;
+  font-style: italic; font-size: 0.85em; 
+  color: #555;
   border-left: 3px solid #aaa;
-  padding: 5px 10px; background: #e8e5dc;
+  padding: 5px 10px; 
+  background: #e8e5dc;
   margin: 8px 0 16px;
 }
 
@@ -154,10 +179,13 @@ table {
     border-collapse: collapse;
     font-size: 0.88em; 
     margin-top: 6px; 
-    }
+    outline: #111 solid 1px;
+    background-color: #fff;
+}
 
 thead tr {
-    background: #111; color: #fff; 
+    background: #003594; 
+    color: #FFFFFF; 
 }
 
 th { 
@@ -165,9 +193,12 @@ th {
     text-align: left;
     font-weight: normal; 
 }
+th em{
+    color: #FFB81C;
+}
 td { 
     padding: 6px 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #32323286;
  }
 
 td:not(:first-child) { 
