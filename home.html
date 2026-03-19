@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Faculty Framework</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="inner">
+      <h1>Navigating AI <em>in the classroom,</em> on your terms.</h1>
+      <p>A structured framework for instructors to define and communicate AI expectations in the clasroom setting.</p>
+      <a href="#builder">Build Your Syllabus Section</a>
+    </div>
+  </div>
+
+  <!-- PRINCIPLES -->
+  <div class="section">
+    <p class="label">01 — Principles</p>
+    <h2>Understanding AI across academic priorities</h2>
+    <p>Before finalizing your course policy, consider how AI interacts with different types of academic work. These three categories reflect the most common concerns raised by both faculty and students.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>1. Qualitative Methods</h3>
+        <p>Faculty described writing focused work as the area where generative AI poses its biggest threats for originality, perspective, and personal experiences. Although AI generative writing may appear good on paper, it lacks the personality that many instructors view as essential to learning </p>
+        <p><em>Relevant to: interviews, observation, coding, textual analysis</em></p>
+      </div>
+      <div class="card">
+        <h3>2. Quantitative &amp; Data-Intensive Work</h3>
+        <p>In some clasroom settings, AI has been useful for debugging, citation formatting, and structuring information. However, there are still concerns around false citations, biased outputs, and blatantly incorrect results.</p>
+        <p><em>Relevant to: statistics, modeling, programming, data visualization</em></p>
+      </div>
+      <div class="card">
+        <h3>3. Human-Centered &amp; Community-Based Research</h3>
+        <p>In policy and community-based work, many faculty expressed that AI cannot replace the judgement needed for personal experiences, ethical reasoning, and context-sensitive analysis. Its use has been effective when paired with supervision.</p>
+        <p><em>Relevant to: PAR, fieldwork, community partnerships, reflection</em></p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="alt" id="builder">
+    <div class="inner">
+      <p class="label">02 — Syllabus Builder</p>
+      <h2>Build your AI policy, step by step.</h2>
+
+      <p><b>Step 1.</b> Select your department:</p>
+      <select id="dept" onchange="showDept()">
+        <option value="">— Select —</option>
+      </select>
+      <p id="dept-note" class="dept-note"></p>
+
+      <p><b>Step 2.</b> Check the top priorities that align to your course:</p>
+      <table>
+        <thead><tr><th>Context</th><th>Permitted ✓</th><th>Prohibited ✕</th></tr></thead>
+        <tbody id="rubric-body"></tbody>
+      </table>
+
+      <br>
+      <button onclick="generate()">Generate Syllabus Section</button>
+
+      <div id="output">
+        <h3>AI Policy Syllabus </h3>
+        <div id="output-text"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>AI Faculty Framework &middot; Rough Draft v1</footer>
+
+  <script src="home.js"></script>
+</body>
+</html>
