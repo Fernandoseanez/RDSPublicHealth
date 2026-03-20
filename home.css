@@ -27,17 +27,24 @@ body {
     background-repeat: repeat;
     background-position: left;
     color: #FFFFFF;
-    padding: 60px 60px 70px;
-    animation: textFadeIn 0.8s ease-in forwards;
+    padding: 60px 0 70px;
     position: relative;
     overflow: hidden;
     border-radius: 1px;
 }
 
 @keyframes textFadeIn {
-    to { opacity: 20; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1; transform: translateY(0); 
+    }
 }
 .hero h1 {
+    font-family: "merriweather", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     opacity: 0;
     font-size: 3.8em;
     line-height: 1.2; 
@@ -58,16 +65,19 @@ body {
     margin-bottom: 10px;
     margin-left: 0px;
     opacity: 0;
-    animation: textFadeIn 1.5s ease-in forwards;
-    width: 525px;
+    animation: textFadeIn 1s ease-in forwards 0.4s;
+    width: 595px;
     border-top: 1px solid white;
 }
 .hero p {
+    font-family: "merriweather", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     opacity: 0;
     color: #C8C9C7; 
     font-size: .95em; 
     display: block;
-    animation: textFadeIn 1.5s ease-in forwards;
+    animation: textFadeIn 1s ease-in forwards 0.6s;
     margin-top: 0;
     margin-bottom: 10px;
     text-shadow: 0 1px 8px rgba(0,0,0,0.268);
@@ -90,7 +100,7 @@ hr {
     border-top: 1px solid #ddd;
     max-width: 800px;
     margin: 0 auto;
-     }
+    }
 
 .label { 
     font-size: 1.5em; color: #00205B;
@@ -119,31 +129,79 @@ p {
 }
 
 .card {
-    border: 2px solid #0000006a;
+    border: 2px solid #393636;
     border-radius: 3px;
     padding: 16px 18px;
     margin-bottom: 14px;
     background: #fff;
     cursor: pointer;
-    transition: box-shadow 0.3s ease-in-out; /* only here */
+    transition: box-shadow 0.3s ease-in-out; 
 }
     
 .card:hover {
-    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.14);
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.26);
  }
 .card h3 { 
-    font-size: 1em;
+    font-family: 'instrument-serif';
+    font-weight: 700;
+    font-size: 1.2em;
+    font-style: normal;
     margin-bottom: 6px;
-    color: #111;
+    color: #00205B;
     }
 .card p { 
-    font-size: 0.88em;
+    font-family: 'instrument-serif';
+    font-weight: 400;
+    font-size: 0.93em;
     color: #444;
-    margin-bottom: 6px;
+    margin-bottom: 6px; 
  }
 
-.card em {
-    color: #888; }
+.card {
+    color: #C8C9C7; 
+}
+
+.card p em {
+    color: #00205B;
+}
+em.gold {
+    color: #111;
+}
+
+.card p em.gold {
+    color: #111;
+}
+
+/* dept tags */
+
+.dept-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.dept-tags span {
+    font-size: 0.72em;
+    background: #FFB81C;
+    color: #FFFFFF;
+    border: 1px solid #00205B;
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+@keyframes beforeColor {
+    from {
+        color: #000000;
+    }
+    to {
+        color: #FFB81C;
+    }
+}
+.card:hover em.gold{
+    animation: beforeColor 0.3s ease-in forwards; 
+}
 
 /* BUILDER */
 select, button {
@@ -151,7 +209,24 @@ select, button {
   font-size: 0.92em;
   padding: 5px 10px;
   border: 1px solid #888;
+  cursor: pointer;
 }
+select {
+    margin-bottom: 15px;
+
+}
+@keyframes colorHover {
+    from {
+        background-color: #FFFFFF;
+    }
+    to {
+        background-color: #FFB81C;
+    }
+}
+select:hover {
+    animation: colorHover 0.65s ease-in forwards;
+}
+
 button { 
     background: #00205B;
     border-radius: .2px;
@@ -161,17 +236,18 @@ button {
     margin-top: 8px; 
 }
 button:hover { 
-    background: #333; 
+    background: #003594; 
 }
 
 .dept-note {
-  display: none;
-  font-style: italic; font-size: 0.85em; 
-  color: #555;
-  border-left: 3px solid #aaa;
-  padding: 5px 10px; 
-  background: #e8e5dc;
-  margin: 8px 0 16px;
+    display: none;
+    font-style: italic; 
+    font-size: 0.85em; 
+    color: #333;
+    border-left: 3px solid #00205B;
+    padding: 5px 10px; 
+    background: #c8ddf5;
+    margin: 8px 0 16px;
 }
 
 table {
@@ -184,7 +260,7 @@ table {
 }
 
 thead tr {
-    background: #003594; 
+    background:#003594; 
     color: #FFFFFF; 
 }
 
@@ -193,7 +269,7 @@ th {
     text-align: left;
     font-weight: normal; 
 }
-th em{
+th em {
     color: #FFB81C;
 }
 td { 
@@ -224,11 +300,24 @@ td:not(:first-child) {
     margin-bottom: 10px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 6px; 
+    color: #00205B;
 }
 #output p  { 
     font-size: 0.88em;
     color: #333;
     margin-bottom: 8px; 
+}
+
+#output ul {
+    padding-left: 22px;
+    margin: 4px 0 14px;
+}
+
+#output ul li {
+    font-size: 0.88em;
+    color: #333;
+    margin-bottom: 5px;
+    line-height: 1.5;
 }
 
 footer { 
