@@ -24,45 +24,64 @@ var depts = [
   
   // All/Yes uses (permitted across departments)
   var allYes = [
-    "Create writing, script, or speech outlines",
-    "Grammar and spelling checks",
+    "Grammer and spelling checks",
+    "Explaining complex concepts (after reading the source material first)",
     "Summarize long documents or papers",
-    "Explain complex concepts",
-    "Image creation and presentation assistance",
-    "Learning research techniques",
-    "Translating documents from another language"
+    "Generating instructions to use non-statistical software (after checking course resources first)",
   ];
   
   // All/No uses (prohibited across departments)
   var allNo = [
-    "Generate citations and find sources",
-    "Input research data (personal identifiable information, cleaning research data)",
+    "Generating citations or finding research sources",
+    "Cleaning or analyzing private research data",
     "Reading entire documents in place of student review",
-    "Write original responses (papers, projects, discussion boards, etc.)",
-    "Decision making"
+    "Writing original responses for any assignments",
+    "Decision making",
+    "Contributions to group assignments without group notice"
   ];
   
   // Rubric rows for the checklist
   var rows = [
+    { 
+      label: "Generating topic ideas for an assignment",
+    },         
+    {
+      label: "Generate an outline for an assignment",         
+    },
+    {
+      label: "Summarize long documents, research papers, etc.", 
+    },
+    {
+      label: "Translating documents or generating text from images of documents",       
+    },
+    { 
+      label: "Generating initial code for R, Stata, etc.",         
+    },
+    { 
+      label: "Debugging code for R, Stata, etc.",  
+    },
+    {
+      label: "Generate images or infographics"
+    },
+    {
+      label: "Generate scripts for presentations or assignments"
+    },
+    {
+      label: "Summarizing or organizing notes"
+    },
+    {
+      label: "Interpreting statistical analyses or data"
+    },
+    {
+      label: "Performing a qualitative analysis"
+    },
+    {
+      label: "Providing structural help for an essay or writing assignment"
+    },
+    {
+      label: "Organizing and combining literature sources"
+    },
 
-    { 
-        label: "Literature review",         
-        hint: "organizing and combining sources (not having AI read for you)" },
-    { 
-        label: "Qualitative coding",         
-        hint: "thematic analysis and interpretation" },
-    { 
-        label: "Essay and reflective writing", 
-        hint: "structural help only, not drafting content" },
-    { 
-        label: "Statistical analysis",       
-        hint: "running analyses or interpreting data" },
-    { 
-        label: "Programming",         
-        hint: "writing or debugging code" },
-    { 
-        label: "Community fieldwork notes",  
-        hint: "summarizing or organizing field notes" },
   ];
   
   // Build department dropdown
@@ -79,7 +98,7 @@ var depts = [
   rows.forEach(function(row) {
     var tr = document.createElement("tr");
     tr.innerHTML = 
-    "<td><b>" + row.label + "</b><br><small style='color:#888;'>" + row.hint + "</small></td>" +
+    "<td><b>" + row.label + "</b><br><small style='color:#888;'>" + "</small></td>" +
     "<td><input type='checkbox' data-label='" + row.label + "' data-type='permitted'></td>" +
     "<td><input type='checkbox' data-label='" + row.label + "' data-type='prohibited'></td>";
     tbody.appendChild(tr);
@@ -100,8 +119,17 @@ var depts = [
   
 //   generate actual template sylabus 
   function generate() {
+
+    // needs to select dept if they wanted the syllabus
+    var dept = document.getElementById("dept").value;
+
+    if(!dept){
+      alert("Please select a department before continuing.")
+      return;
+    }
+
     var permitted = [], prohibited = [];
-  
+
     document.querySelectorAll("input:checked").forEach(function(box) {
       if (box.dataset.type === "permitted") permitted.push(box.dataset.label);
       if (box.dataset.type === "prohibited") prohibited.push(box.dataset.label);
@@ -121,7 +149,6 @@ var depts = [
     
     // little preamble
     html += "<p>Understanding how and when to use generative AI tools (such as ChatGPT, Copilot) is quickly emerging as a necessary skill for work in public health. While the use of generative AI is generally discouraged so as not to hinder your academic success, generative AI tools are accepted in this class under specific circumstances. You are fully responsible for any information you submit that is informed by generative AI outputs (ensuring that it does not violate academic honesty standards, intellectual property laws, or standards of non-public research you are conducting through coursework), and your use of generative AI tools must be properly documented and cited for any work submitted in this course.</p>";
-
 
     // permitted bullet list
     html += "<p><b>Permitted Uses of AI:</b></p><ul>";

@@ -318,6 +318,7 @@ td:not(:first-child) {
 #output ul {
     padding-left: 22px;
     margin: 4px 0 14px;
+    font-weight: 100;
 }
 
 #output ul li {
@@ -325,7 +326,6 @@ td:not(:first-child) {
     color: #333;
     margin-bottom: 5px;
     line-height: 1.5;
-    font-weight: 600;
 }
 
 footer { 
