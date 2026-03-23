@@ -5,7 +5,7 @@
  }
 
 body {
-  font-family: Georgia, serif;
+  font-family: "merriweather";
   font-size: 15px;
   line-height: 1.6;
   color: #111;
@@ -97,14 +97,14 @@ body {
 
 hr { 
     border: none;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #830e0e;
     max-width: 800px;
     margin: 0 auto;
     }
 
 .label { 
     font-size: 1.5em; color: #00205B;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #FFB81C;
     font-family: "alternate-gothic-atf", sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -142,18 +142,18 @@ p {
     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.26);
  }
 .card h3 { 
-    font-family: 'instrument-serif';
+    font-family: 'merriweather';
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-style: normal;
     margin-bottom: 6px;
     color: #00205B;
     }
 .card p { 
-    font-family: 'instrument-serif';
+    font-family: 'merriweather';
     font-weight: 400;
-    font-size: 0.93em;
-    color: #444;
+    font-size: 0.80em;
+    color: #111;
     margin-bottom: 6px; 
  }
 
@@ -163,13 +163,19 @@ p {
 
 .card p em {
     color: #00205B;
+    font-style: italic;
+    font-weight: 500;
 }
 em.gold {
     color: #111;
+    font-weight: 500;
 }
 
 .card p em.gold {
     color: #111;
+    font-style: italic;
+    font-weight: 700;
+
 }
 
 /* dept tags */
@@ -183,12 +189,13 @@ em.gold {
 
 .dept-tags span {
     font-size: 0.72em;
-    background: #FFB81C;
+    background: #003594;
     color: #FFFFFF;
-    border: 1px solid #00205B;
     padding: 2px 8px;
-    border-radius: 2px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 3px;
+    outline: 1.5px solid #FFB81C;
+    font-family: "alternate-gothic-atf";
+    font-weight: 700;
 }
 
 @keyframes beforeColor {
@@ -205,7 +212,7 @@ em.gold {
 
 /* BUILDER */
 select, button {
-  font-family: Georgia, serif;
+  font-family: "merriweather", serif;
   font-size: 0.92em;
   padding: 5px 10px;
   border: 1px solid #888;
@@ -229,7 +236,7 @@ select:hover {
 
 button { 
     background: #00205B;
-    border-radius: .2px;
+    border-radius: 2px;
     color: #fff;
     cursor: pointer;
     border: none;
@@ -298,7 +305,7 @@ td:not(:first-child) {
 #output h3 { 
     font-size: 1em;
     margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #FFB81C;
     padding-bottom: 6px; 
     color: #00205B;
 }
@@ -318,6 +325,7 @@ td:not(:first-child) {
     color: #333;
     margin-bottom: 5px;
     line-height: 1.5;
+    font-weight: 600;
 }
 
 footer { 
@@ -327,3 +335,19 @@ footer {
     color: #aaa;
     border-top: 1px solid #ddd; 
 }
+
+.btn {
+    background: #00205B;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    font-family: "merriweather";
+    font-size: 0.88em;
+    cursor: pointer;
+    border-radius: 2px;
+    margin-top: 16px;
+  }
+  
+  .btn:hover {
+    background: #003594;
+  }

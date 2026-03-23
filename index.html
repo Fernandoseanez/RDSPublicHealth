@@ -7,6 +7,9 @@
 
   <!-- pitt official fonts  -->
   <link rel="stylesheet" href="https://use.typekit.net/ono7wxi.css">
+  <!-- adds downloader  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 
 </head>
 <body>
@@ -30,10 +33,10 @@
     <div class="cards">
       <div class="card">
         <h3>Qualitative Methods</h3>
-        <p>Faculty described writing focused work as the area where generative AI poses its biggest threats for originality, perspective, and personal experiences. Although AI generative writing may appear good on paper, it lacks the personality that many instructors view as essential to learning </p>
+        <p>Faculty described writing-focused work as the area where generative AI poses its biggest threats to originality, perspective, and personal expression. Although AI-generated writing may appear good on paper, it often lacks the personality that many instructors view as essential to learning.</p>
 <p><em class="gold"> Relevant to: </em><em> interviews, observation, coding, textual analysis</em></p>
         <div class="dept-tags">
-            <Span>BCHS</Span><span>Health Policy & Mgmt</span> <span>Env. & Occ. Health</span>
+            <Span>BCHS</Span><span>HPM</span> <span>EOH</span>
         </div>
     </div>
       <div class="card">
@@ -41,7 +44,7 @@
         <p>In some clasroom settings, AI has been useful for debugging, citation formatting, and structuring information. However, there are still concerns around false citations, biased outputs, and blatantly incorrect results.</p>
         <p><em><em class="gold"> Relevant to: </em> statistics, modeling, programming, data visualization</em></p>
         <div class="dept-tags">
-            <Span>Epidemiology</Span><span>Biostatistics</span> <span>Genetics</span> <span>Infectious Diseases</span>
+            <Span>EPI</Span><span>Biostatistics</span> <span>Genetics</span> <span>IDM</span>
         </div>
       </div>
       <div class="card">
@@ -49,7 +52,7 @@
         <p>In policy and community-based work, many faculty expressed that AI cannot replace the judgement needed for personal experiences, ethical reasoning, and context-sensitive analysis. Its use has been effective when paired with supervision.</p>
         <p><em class="gold"> Relevant to: </em> <em> PAR, fieldwork, community partnerships, reflection</em></p>
         <div class="dept-tags">
-            <Span>BCHS</Span><span>Health Policy & Mgmt</span> <span>Env. & Occ. Health</span>
+            <Span>BCHS</Span><span>HPM</span> <span>EOH</span>
         </div>
       </div>
     </div>
@@ -83,8 +86,9 @@
       <button onclick="generate()">Generate Syllabus Section</button>
 
       <div id="output">
-        <h3>AI Policy Syllabus </h3>
+        <h3> AI Policy Syllabus </h3>
         <div id="output-text"></div>
+        <button onclick="downloadSyllabus()">Download ⬇︎</button>
       </div>
     </div>
   </div>

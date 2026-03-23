@@ -7,15 +7,15 @@ var depts = [
         good: "Predictive modeling, protein structure prediction (AlphaFold), identifying complex problems and patterns within datasets, spatial modeling" },
     {
         name: "Biostatistics",
-        good: "Assistance with coding in Stata, R, GIS, or SAS (debugging, explaining statistical functions, suggesting efficient code), determine causal inference" },
+        good: "Assistance with coding in Stata, R, GIS, or SAS (debugging, explaining statistical functions, suggesting efficient code), and determining causal inference." },
     {
-        name: "Health Policy & Management", 
+        name: "Health Policy & Management (HPM)", 
         good: "Summarize current policies, compare policy approaches across states or countries, legislative communication" },
     {
-        name: "Environmental & Occupational Health", 
+        name: "Environmental & Occupational Health (EOH)", 
         good: "Spatial modeling, optimizing sustainability initiatives, drafting safety procedures and manuals" },
     { 
-        name: "Infectious Diseases & Microbiology",
+        name: "Infectious Diseases & Microbiology (IDM)",
         good: "Predict biomolecular properties and structures" },
     {
         name: "Genetics",
@@ -37,7 +37,7 @@ var depts = [
   var allNo = [
     "Generate citations and find sources",
     "Input research data (personal identifiable information, cleaning research data)",
-    "Read entire documents",
+    "Reading entire documents in place of student review",
     "Write original responses (papers, projects, discussion boards, etc.)",
     "Decision making"
   ];
@@ -47,18 +47,18 @@ var depts = [
 
     { 
         label: "Literature review",         
-        hint: "organizing and combining sources (not AI reading for you)" },
+        hint: "organizing and combining sources (not having AI read for you)" },
     { 
         label: "Qualitative coding",         
         hint: "thematic analysis and interpretation" },
     { 
-        label: "Essay & reflective writing", 
+        label: "Essay and reflective writing", 
         hint: "structural help only, not drafting content" },
     { 
         label: "Statistical analysis",       
-        hint: "running or interpreting data" },
+        hint: "running analyses or interpreting data" },
     { 
-        label: "Code & programming",         
+        label: "Programming",         
         hint: "writing or debugging code" },
     { 
         label: "Community fieldwork notes",  
@@ -120,7 +120,7 @@ var depts = [
     var html = "";
     
     // little preamble
-    html += "<p>Understanding how and when to use generative AI tools (such as ChatGPT, Copilot) is quickly emerging as a necessary skill for work in public health. While the use of generative AI is overall discouraged as to not hinder your academic success, generative AI tools are accepted in this class under specific circumstances. You are fully responsible for the information you submit based on a generative AI query (such that it does not violate academic honesty standards, intellectual property laws, or standards of non-public research you are conducting through coursework), and your use of generative AI tools must be properly documented and cited for any work submitted in this course.</p>";
+    html += "<p>Understanding how and when to use generative AI tools (such as ChatGPT, Copilot) is quickly emerging as a necessary skill for work in public health. While the use of generative AI is generally discouraged so as not to hinder your academic success, generative AI tools are accepted in this class under specific circumstances. You are fully responsible for any information you submit that is informed by generative AI outputs (ensuring that it does not violate academic honesty standards, intellectual property laws, or standards of non-public research you are conducting through coursework), and your use of generative AI tools must be properly documented and cited for any work submitted in this course.</p>";
 
 
     // permitted bullet list
@@ -143,4 +143,18 @@ var depts = [
     document.getElementById("output-text").innerHTML = html;
     document.getElementById("output").style.display = "block";
     document.getElementById("output").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function downloadSyllabus() {
+    var doc = new window.jspdf.jsPDF();
+    var text = document.getElementById("output-text").innerText;
+
+    doc.setFontSize(14);
+    doc.text("AI Policy Syllabus", 15, 20);
+
+    doc.setFontSize(11);
+    var lines = doc.splitTextToSize(text, 150);
+    doc.text(lines, 15, 35);
+
+    doc.save("AI_Policy_Syllabus.pdf");
   }
